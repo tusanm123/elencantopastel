@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Encanto Pastelero</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #ffe6f0;
+      color: #5c2a2a;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffcce0;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 5px solid #ff99cc;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #ffcce0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #b30059;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #ffb3d9;
+      color: #fff;
+    }
+
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #b30059;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    .menu.active .nav-links {
+      display: flex;
+    }
+
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .galeria img {
+      width: 250px;
+      height: auto;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .menu {
+      background-color: #fff0f5;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .menu h3 {
+      color: #cc3366;
+    }
+
+    footer {
+      background-color: #ffcce0;
+      text-align: center;
+      padding: 10px;
+      border-top: 3px solid #ff99cc;
+    }
+
+    .facebook-btn {
+      background-color: #3b5998;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .facebook-btn:hover {
+      background-color: #2d4373;
+    }
+
+    .facebook-icon {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .hamburger {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>El Encanto Pastelero</h1>
+    <p>Pasteles y Galletas con Sabor a Amor</p>
+  </header>
+
+  <nav class="menu">
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="nav-links">
+      <a href="#productos">Productos</a>
+      <a href="#menu">Menú y Precios</a>
+      <a href="#contacto">Facebook</a>
+    </div>
+  </nav>
+
+  <section id="productos">
+    <h2>Pasteles y Galletas</h2>
+    <div class="galeria">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Pastel rosa decorado" />
+      <img src="https://images.unsplash.com/photo-1586985288600-5ca6d94b7c77" alt="Galletas decoradas" />
+      <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38" alt="Pastel tierno con frutas" />
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Menú y Precios</h2>
+    <h3>Pasteles</h3>
+    <ul>
+      <li>Pastel de Chocolate - $250 MXN</li>
+      <li>Pastel de Fresa con Crema - $280 MXN</li>
+      <li>Pastel Personalizado - desde $350 MXN</li>
+    </ul>
+    <h3>Galletas</h3>
+    <ul>
+      <li>Galletas decoradas (12 pzas) - $120 MXN</li>
+      <li>Galletas rellenas - $100 MXN</li>
+    </ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <a class="facebook-btn" href="https://www.facebook.com/elencantopastelero" target="_blank" rel="noopener noreferrer">
+      <svg class="facebook-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.463.099 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116C23.4 24 24 23.4 24 22.675V1.325C24 .6 23.4 0 22.675 0z"/>
+      </svg>
+      Visítanos en Facebook
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 El Encanto Pastelero. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
